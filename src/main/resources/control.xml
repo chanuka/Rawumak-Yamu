@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 
+  - This file is included by the struts.xml file.
+-->
+<struts>
+
+
+    <package name="login" extends="pglobal" namespace="/">
+        <action name="*UserLogin" method="{1}" class="com.rawmakyamu.action.login.LoginAction">
+            <result name="message">/login.jsp</result>
+            <result name="success">/home.jsp</result>
+            <result name="firstlogin" type="redirectAction">
+                <param name="actionName">Viewpaschanged</param>               
+            </result>
+           
+        </action>
+    </package>
+    
+    <package name="systemaudit" extends="pglobal" namespace="/"> 
+        
+        <action name="*SystemAudit" method="{1}"
+                class="com.rawmakyamu.action.systemaudit.SystemAuditAction">
+            <result name="message">/WEB-INF/pages/systemaudit/systemaudit/audit.jsp</result>
+            <result name="view">/WEB-INF/pages/systemaudit/systemaudit/audit.jsp</result>
+            <result name="viewdetail">/WEB-INF/pages/systemaudit/systemaudit/viewaudit.jsp</result>
+            <result name="success"></result>            
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="logoutuser" type="json"></result>  
+                      
+            <result name="download" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename=audit_report.pdf</param>
+                <!--<param name="bufferSize">1024</param>-->
+            </result>  
+            
+            <result name="report" type="jasper">
+                <param name="location">/WEB-INF/pages/systemaudit/report/systemaudit/view_audit_report.jasper</param>
+                <param name="dataSource">audata</param>               
+                <param name="format">PDF</param>     
+                <param name="contentDisposition">attachment;filename=view_audit_report.pdf</param>
+                <param name="reportParameters">parameterMap</param>
+            </result>
+            
+            <result name="excelreport" type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="audit_report.xlsx"</param>
+                <param name="bufferSize">61440</param>
+            </result>
+            
+            <result name="zip" type="stream">
+                <param name="contentDisposition">attachment;filename="audit_report.zip"</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">zipStream</param>
+                <param name="bufferSize">61440</param>
+            </result> 
+            
+        </action>
+        
+        <action name="*LoginHistory" method="{1}"
+                class="com.rawmakyamu.action.systemaudit.LoginHistoryAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="success"></result>            
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="logoutuser" type="json"></result>            
+            <result name="view">/WEB-INF/pages/systemaudit/mobileloginhistory/loginhistory.jsp</result>
+            
+            <result name="download" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename=mobile_login_history_report.pdf</param>
+                <param name="bufferSize">1024</param>
+            </result>  
+
+            <result name="report" type="jasper">
+                <param name="location">/WEB-INF/pages/systemaudit/report/mobileloginhistory/view_mobile_login_history_report.jasper</param>
+                <param name="dataSource">audata</param>               
+                <param name="format">PDF</param>     
+                <param name="contentDisposition">attachment;filename=mobile_login_history_report.pdf</param>
+                <param name="reportParameters">parameterMap</param>
+            </result>
+            
+            <result name="excelreport" type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="mobileloginhistory_report.xlsx"</param>
+                <param name="bufferSize">61440</param>
+            </result>
+            <result name="zip" type="stream">
+                <param name="contentDisposition">attachment;filename="mobileloginhistory_report.zip"</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">zipStream</param>
+                <param name="bufferSize">61440</param>
+            </result>  
+        </action> 
+        
+  
+                      
+        
+    </package>
+    
+
+    
+     
+    <package name="usermanagement" extends="pglobal" namespace="/">
+        
+        <action name="*SystemUser" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.SystemUserAction" >
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/systemuser/systemuser.jsp</result> 
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/usermanagement/systemuser/systemuserinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/usermanagement/systemuser/systemuseredit.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="listdual" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="findDualAuthUsers" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="changepassword" >/WEB-INF/pages/controlpanel/usermanagement/systemuser/systemuserpwdchange.jsp</result>       
+        </action>
+        
+        <action name="*Section" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.SectionAction">          
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="activate" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/sectionmgt/sectionmgt.jsp</result>   
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/usermanagement/sectionmgt/sectionmgtinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/usermanagement/sectionmgt/sectionmgtedit.jsp</result>           
+        </action>
+        
+        <action name="*Task" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.TaskAction">
+            
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="activate" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/task/task.jsp</result>
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/usermanagement/task/taskinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/usermanagement/task/taskedit.jsp</result>
+                
+        </action>        
+
+        <action name="*Page" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.PageAction">
+            
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/page/page.jsp</result>
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/usermanagement/page/pageinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/usermanagement/page/pageedit.jsp</result>
+            
+        </action>
+           
+        <action name="*UserRolePrivilege" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.UserRolePrivilegeAction">            
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="cerror">/WEB-INF/pages/controlpanel/usermanagement/userroleprivilege/userroleprivilege.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="findpage" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="loadsections" type="json"></result>
+            <result name="findtask" type="json"></result>
+            <result name="loadpages" type="json"></result>
+            <result name="logoutuser" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/userroleprivilege/userroleprivilege.jsp</result>
+            <result name="assignrole">/WEB-INF/pages/controlpanel/usermanagement/userroleprivilege/userroleassign.jsp</result>
+        </action>
+                
+        <action name="*UserRole" method="{1}" class="com.rawmakyamu.action.controlpanel.usermanagement.UserRoleMgtAction">
+            
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="txnload" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="activate" type="json"></result>
+            <result name="findauth" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/userrolemgt/userrolemanagement.jsp</result>
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/usermanagement/userrolemgt/userrolemanagementinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/usermanagement/userrolemgt/userrolemanagementedit.jsp</result>
+        </action>
+
+
+        <action name="*ChangePassword" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.usermanagement.PasswordResetAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="resetpassword">/defaultaccesscontroler.jsp</result>
+            <result name="logoutuser" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/passwordreset.jsp
+            </result>
+            <result name="success"></result>
+        </action>
+        <action name="*paschanged" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.usermanagement.PasswordResetAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="resetpassword">/defaultaccesscontroler.jsp</result>
+            <result name="logoutuser" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/usermanagement/paschanged.jsp
+            </result>
+            <result name="success"></result>
+        </action>
+        
+        <action name="*PasswordPolicy" method="{1}" class="com.rawmakyamu.action.controlpanel.systemconfig.PasswordPolicyAction" >
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="reset" type="json"></result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/passwordpolicy.jsp</result>
+        </action>
+        
+    </package>
+    
+
+    
+    <package name="systemconfig" extends="pglobal" namespace="/">
+        
+        <action name="*TransactionType" method="{1}"
+                        class="com.rawmakyamu.action.controlpanel.systemconfig.TransactionTypeAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/transactiontype/transactiontype.jsp</result>
+            <result name="reset" type="json"></result>
+            <result name="success"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/systemconfig/transactiontype/transactiontypeinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/transactiontype/transactiontypeedit.jsp</result>
+            
+        </action>
+        
+
+        <action name="*MobMsgMgt" method="{1}" class="com.rawmakyamu.action.controlpanel.systemconfig.MobMsgMgtAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/mobmsgmgt/mobmsg.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/mobmsgmgt/mobmsgedit.jsp</result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="success"></result>
+            
+        </action>
+        
+
+        
+        <action name="*MSMobUserParam" method="{1}" class="com.rawmakyamu.action.controlpanel.systemconfig.IBMobUserParamAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/msmobuser/msmobuserparam.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/msmobuser/msmobuserparamedit.jsp</result>
+            <result name="reset" type="json"></result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="success"></result>
+            
+        </action>
+        
+
+        
+        <action name="*PromotionMgt" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.systemconfig.PromotionMgtAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/promotionmgt/promotionmgt.jsp</result> 
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/systemconfig/promotionmgt/promotionmgtinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/promotionmgt/promotionmgtedit.jsp</result>
+            <result name="add">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="update">/WEB-INF/pages/msgimageTM.jsp</result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>        
+            <result name="success"></result>
+            <result name="download" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename=Campaign_report.pdf</param>
+                <!--<param name="bufferSize">1024</param>-->
+            </result>    
+            
+            <result name="excelreport" type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="Campaign_report.xlsx"</param>
+                <param name="bufferSize">61440</param>
+            </result>
+            
+            <result name="zip" type="stream">
+                <param name="contentDisposition">attachment;filename="Campaign_report.zip"</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">zipStream</param>
+                <param name="bufferSize">61440</param>
+            </result>        
+        </action> 
+        
+        <action name="*ATMLocations" method="{1}" 
+                class="com.rawmakyamu.action.controlpanel.systemconfig.ATMLocationsAction" >  
+                   
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="messagecsv">/WEB-INF/pages/msgcsvupload.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/atmlocation/atmlocations.jsp</result> 
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/systemconfig/atmlocation/atmlocationsinsert.jsp</result>
+            <result name="viewpopupcsv">/WEB-INF/pages/controlpanel/systemconfig/atmlocation/atmlocationscsv.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/atmlocation/atmlocationsedit.jsp</result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result> 
+            <result name="upload" type= "json"></result>       
+            <result name="success"></result>  
+            <result name="excelreport" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="Template_location.csv"</param>
+                <param name="bufferSize">4096</param>
+            </result>       
+        </action>
+      
+        
+        <action name="*Terms" method="{1}" 
+                class="com.rawmakyamu.action.controlpanel.systemconfig.TermsAction" >  
+                   
+            <result name="message">/WEB-INF/pages/msgSpe.jsp</result>
+            <result name="messageadd">/WEB-INF/pages/msgTermsAdd.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/terms/terms.jsp</result>
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/systemconfig/terms/termsinsert.jsp</result> 
+            <result name="find" type="json"></result>
+            <result name="delete" type="json"></result>
+            <result name="addnew" type="json"></result>
+            <result name="upload" type= "json"></result>       
+            <result name="update" type= "json">/WEB-INF/pages/msgSpe.jsp</result>       
+            <result name="success"></result>          
+        </action>              
+
+    </package>
+
+    <package name="reportexplorer" extends="pglobal" namespace="/">
+        
+        <action name="*TransactionExplorer" method="{1}" class="com.rawmakyamu.action.reportexplorer.TransactionExplorerAction" >
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="success"></result>
+            <result name="search" type="json"></result>           
+            <result name="view">/WEB-INF/pages/reportexplorer/transactionexplorer/transactionexplorer.jsp</result>
+            <result name="viewdetail">/WEB-INF/pages/reportexplorer/transactionexplorer/viewtransaction.jsp</result>   
+            <result name="list" type='json'></result>
+             
+            <result name="download" type="stream">
+                <param name="contentType">application/pdf</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename=Transaction_Explorer_Report.pdf</param>
+                <!--<param name="bufferSize">1024</param>-->
+            </result>  
+            <result name="excelreport" type="stream">
+                <param name="contentType">"application/vnd.ms-excel"</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">attachment;filename="txnexplorer_report.xlsx"</param>
+                <param name="bufferSize">61440</param>
+            </result>
+            <result name="zip" type="stream">
+                <param name="contentDisposition">attachment;filename="txnexplorer_report.zip"</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">zipStream</param>
+                <param name="bufferSize">61440</param>
+            </result>  
+            <result name="report" type="jasper">
+                <param name="location">/WEB-INF/pages/reportexplorer/report/view_txn_exception_report.jasper</param>
+                <param name="dataSource">audata</param>               
+                <param name="format">PDF</param>     
+                <param name="contentDisposition">attachment;filename=Individual_Transaction_Explorer_Report.pdf</param>
+                <param name="reportParameters">parameterMap</param>
+            </result>
+        </action>
+                    
+    </package>       
+    
+    <package name="customermanagement" extends="pglobal" namespace="/">
+        
+        <action name="*CusPushNotification" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.customermanagement.CusPushNotificationAction">
+            <result name="success"></result>
+            <result name="messagecsv">/WEB-INF/pages/msgcsvupload.jsp</result>
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="list" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="detail">/WEB-INF/pages/controlpanel/customermanagement/cuspushnotification/customerpushnotificationview.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/customermanagement/cuspushnotification/customerpushnotification.jsp</result>   
+            <result name="viewpopupcsv">/WEB-INF/pages/controlpanel/customermanagement/cuspushnotification/customerpushnotificationupload.jsp</result>
+            <result name="upload" type= "json"></result>
+            <result name="excelreport" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">inputStream</param>
+                <param name="contentDisposition">attachment;filename="Template_Push_Notification.csv"</param>
+                <param name="bufferSize">4096</param>
+            </result>       
+            
+        </action>
+        
+        <action name="*BlockNotification" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.customermanagement.BlockNotificationAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/customermanagement/blocknotification/blocknotification.jsp</result> 
+            <result name="viewpopup">/WEB-INF/pages/controlpanel/customermanagement/blocknotification/blocknotificationinsert.jsp</result>
+            <result name="detail">/WEB-INF/pages/controlpanel/customermanagement/blocknotification/blocknotificationedit.jsp</result>
+            <result name="list" type="json"></result>
+            <result name="list1" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="load" type="json"></result>
+            <result name="delete" type="json"></result>
+     
+            <result name="success"></result>
+        </action> 
+
+    </package>  
+    
+</struts>

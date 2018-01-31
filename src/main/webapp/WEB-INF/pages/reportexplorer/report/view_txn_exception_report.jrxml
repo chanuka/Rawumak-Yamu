@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customerReport" pageWidth="595" pageHeight="842" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="2395a014-2610-4efd-a0e5-d9dc92c95b20">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.4641000000000044"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="alternateStyle">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 1]]></conditionExpression>
+			<style backcolor="#E5ECF9"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="user" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{user}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="task" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{task}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="page" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{page}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="section" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{section}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bankmail" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{bankmail}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="banktel" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{banktel}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bankaddress" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{bankaddress}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printeddate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{printeddate}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ID" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{ID}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="role" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{role}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="description" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{description}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ip" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{ip}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="createtime" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{createtime}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imageurl" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{imageurl}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="bankaddressheader" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{bankaddressheader}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="txnid" class="java.lang.String"/>
+	<field name="tomaskedcard" class="java.lang.String"/>
+	<field name="maskedcard" class="java.lang.String"/>
+	<field name="txntypecode" class="java.lang.String"/>
+	<field name="walletid" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="towallet" class="java.lang.String"/>
+	<field name="posconcode" class="java.lang.String"/>
+	<field name="nii" class="java.lang.String"/>
+	<field name="tid" class="java.lang.String"/>
+	<field name="mid" class="java.lang.String"/>
+	<field name="approvecode" class="java.lang.String"/>
+	<field name="rrn" class="java.lang.String"/>
+	<field name="traceno" class="java.lang.String"/>
+	<field name="rescode" class="java.lang.String"/>
+	<field name="mti" class="java.lang.String"/>
+	<field name="processingcode" class="java.lang.String"/>
+	<field name="invoiceno" class="java.lang.String"/>
+	<field name="cardexdate" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="lastupdatedtime" class="java.lang.String"/>
+	<field name="createdtime" class="java.lang.String"/>
+	<field name="localdate" class="java.lang.String"/>
+	<field name="localtime" class="java.lang.String"/>
+	<field name="posentrymode" class="java.lang.String"/>
+	<field name="TxntypeDes" class="java.lang.String"/>
+	<field name="listenerid" class="java.lang.String"/>
+	<field name="currencydes" class="java.lang.String"/>
+	<field name="responseDes" class="java.lang.String"/>
+	<field name="mobileNo" class="java.lang.String"/>
+	<field name="toAccount" class="java.lang.String"/>
+	<field name="fromAccount" class="java.lang.String"/>
+	<field name="tomobile" class="java.lang.String"/>
+	<field name="tokenid" class="java.lang.String"/>
+	<field name="toemail" class="java.lang.String"/>
+	<field name="approvalstatus" class="java.lang.String"/>
+	<field name="promoAmount" class="java.lang.String"/>
+	<field name="commissionAmount" class="java.lang.String"/>
+	<field name="deductAmount" class="java.lang.String"/>
+	<field name="cardType" class="java.lang.String"/>
+	<field name="cardBrand" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="593" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="e892dcf7-33df-4670-966a-4b91348c30c3" key="rectangle-1" x="1" y="1" width="535" height="61" forecolor="#999999" backcolor="#C5C5C5"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="d603c120-91b0-4c5c-8113-cd41be7b2bdf" key="staticText-1" x="83" y="2" width="453" height="26" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[		FriMi - Digital Life Style Solution  ]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="8d4a9819-f01e-4f59-8d5f-4ca89701a6f8" key="line-1" x="0" y="64" width="535" height="1" forecolor="#FD4F00"/>
+			</line>
+			<image>
+				<reportElement uuid="4632899b-514d-432f-a08f-ca22b64b3383" x="5" y="1" width="156" height="61"/>
+				<imageExpression><![CDATA[$P{imageurl}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="434b9977-5661-4c62-871a-755de59b4292" x="171" y="26" width="340" height="15" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bankaddressheader}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ad1ef9b6-cc19-468e-8313-4d9f4af36bae" key="staticText-1" x="159" y="43" width="376" height="17" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Transaction  Info Individual Report]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="84f7f127-5fe7-42cb-b434-c1e992485d84" key="rectangle-3" x="194" y="78" width="275" height="16" forecolor="#FFFFFF" backcolor="#C5C5C5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="b86d84a4-888d-4669-aee1-538dcf202d44" key="rectangle-3" x="53" y="78" width="140" height="17" forecolor="#FFFFFF" backcolor="#C5C5C5"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="628cc990-b397-45bb-9732-cd145ec6964d" key="staticText-11" x="59" y="79" width="81" height="15" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Attributes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="67c6db45-86a8-44e6-a9a1-7863a068bf08" key="staticText-11" x="230" y="79" width="81" height="15" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Values]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="0f35135b-65bd-44cc-8ebb-fefa466a47a1" positionType="Float" mode="Transparent" x="54" y="95" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="c4bc6747-dd87-4748-b690-f4f4b03a34fa" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Transaction ID    ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9b3220b1-2032-4e44-b721-86fe220965b1" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="16" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="2dc255b7-cf16-4b3d-b7f3-a3504da99725" key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="150" y="0" width="261" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{txnid}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement uuid="7164d498-59aa-40c2-961a-d3904b07ba2d" positionType="Float" mode="Opaque" x="54" y="108" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="e4a61b03-5cc9-414f-adf9-e4bd71a0461c" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Wallet ID                            ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="c2b1c8f2-9ad7-4661-9c14-f56485205ab5" key="textField" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{walletid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e6490e12-6bce-42c8-b5e6-a091785588d1" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="209f6b64-ea3a-4c62-ba2e-d151942f940b" positionType="Float" mode="Transparent" x="54" y="121" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="3d4c71b5-0e85-4130-99a7-8bf22b2cbcad" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="110" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[To Wallet]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="437af66c-cad2-4e77-8ace-33a0c804fe6f" key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{towallet}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="4e7477a0-5aff-424b-94a1-28f507817d56" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="25a08aea-abd3-4226-ae46-3a4cc59232b0" positionType="Float" mode="Opaque" x="54" y="160" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="330b24f2-afcc-4648-bf49-3a2bda3e1620" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[From Mobile Number]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="37041add-48f3-4902-90bc-193c0979fb90" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mobileNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7fa17643-0d0d-4272-8e80-04e4a9ae70dd" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="3e267965-5157-4339-8933-355aa52d7119" positionType="Float" mode="Transparent" x="54" y="172" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="cc958861-1a70-46f3-b014-ac4391592220" key="staticText" positionType="Float" x="16" y="0" width="108" height="12"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[To Mobile Number]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="3a9a29c2-0d48-4ddb-9d07-e95ccc27da4b" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tomobile}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="c47f5de6-7c9f-465d-b597-f22ea5459eaa" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="fd07df42-d7d2-4459-bfc0-a02415613049" positionType="Float" mode="Opaque" x="54" y="184" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="10fb4831-38e7-4464-8049-31f0ba9501d1" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[To Email]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="7ad153d6-31b5-41e1-bcfd-69a8380237aa" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="265" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{toemail}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="c66a4706-eeef-4726-97b7-9fea4b98673b" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="ae75fe0e-0e6f-4bbb-9333-7ec73076423e" positionType="Float" mode="Opaque" x="54" y="235" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="00a717cd-2174-40e5-8d83-e0a1b87132c6" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Trace No                     ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="bba6c77a-27f1-4bda-8c4d-f9b4b8af3f1c" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{traceno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="3f238076-ed6a-4dcd-9767-8ed70a969009" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="4bb47f88-10b0-4ba8-8f8e-226084610b65" positionType="Float" mode="Transparent" x="54" y="196" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="e044d04d-1ee7-4b82-bc30-56980176f686" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#CECEFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Merchant ID                                ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="1813b4c3-d282-4188-8a07-ec1f714a300a" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="c0afec1c-5a3a-4a62-b7ee-f418f81233ad" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="db3cb0b7-07c5-421f-b416-411c55d90b96" positionType="Float" mode="Opaque" x="54" y="287" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="cbe8e887-560e-413b-9207-15c6e990c7d1" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Amount                                ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="6eeaabf8-cb74-4c64-9648-1462fec8dd52" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="1e194115-e9a6-489c-9dec-41bf4ebe2472" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="2d83de98-7cba-44a2-8793-a80171906ed6" positionType="Float" x="54" y="274" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="ef8f0b8c-dda8-4aa5-adcf-8e812ba8b5b3" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Currency]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="80278151-ca88-4d3e-bd88-f29f3e4e55fb" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{currencydes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="6987c834-31bd-43b7-8cec-8561322d9baf" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="57062613-e88d-4444-8fe1-97b2557cc7e9" positionType="Float" mode="Transparent" x="54" y="222" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="47538286-fbc7-4325-8ab1-ad14c20d8b66" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Transaction Type       ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="178c5c57-c610-4430-9104-ae1c2ee4c8c6" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TxntypeDes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b8cb6d1e-7ea6-4fd0-bac6-885d56d63e84" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="87f7d52d-3fa4-4496-92dd-e1c165572db4" positionType="Float" mode="Opaque" x="54" y="209" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="2dfa0537-9ef7-4eab-a728-dbb76fbc3eff" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Terminal ID                                ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="308260c1-5b33-4b59-afba-5e7722f116fd" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="63946842-b52d-43df-a0eb-1df88e4e5312" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="b8618b88-5ce4-4d6c-9096-1db3c6c0bdf4" positionType="Float" mode="Transparent" x="54" y="248" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="c018245a-3dd6-480d-b52e-91a4e3ec49f6" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Card Brand]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="6820ca68-618f-4e2c-9f27-b1bdfe3ce225" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cardBrand}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="9f1f3a94-5fbe-44d7-8c07-c2030302a663" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="f7581a40-a663-49e4-8264-2817d268fe5c" positionType="Float" mode="Opaque" x="54" y="312" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="12035262-38a8-43d2-99c7-b7a4a64795a7" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Commission Amount]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="c940f061-d275-432e-9efd-e0fd49202426" key="textField" positionType="Float" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{commissionAmount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="8d988954-a14b-4b1e-bcf4-712ec50dfe9a" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="77b4a389-cb53-4722-a3c5-bba1385538f6" positionType="Float" mode="Opaque" x="54" y="300" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="e38916c1-49f9-44c7-97b3-79f7da4d5477" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Promotion Amount]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="f575dc8f-c614-49a3-9f9b-f1f1cf21e09d" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{promoAmount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="2f3cc46b-8a14-44f5-a965-b68d052c0ff6" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="f0c5511e-9523-4166-b896-23ac05280265" positionType="Float" mode="Opaque" x="54" y="366" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="27937a75-d34b-4669-97d8-df10f9c876a4" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Response       ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="9a48e759-a78e-4ece-8b01-3a954cdd5608" key="textField" positionType="Float" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{responseDes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="ba6ef9fd-35d3-427b-942e-4a7ecedbc76c" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="608f0247-7851-4fdb-99e9-b2972434aa62" positionType="Float" mode="Opaque" x="54" y="379" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="f57c394f-a0f0-414f-96dc-98a2509f8829" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RRN                               ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="e812fc50-be09-45b6-80b6-3a04adcdae36" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rrn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="6c26b675-cca0-45c2-85c7-7b7def35718d" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="072d92f8-d764-4b49-a8d7-00c5aaad5fc6" positionType="Float" mode="Opaque" x="54" y="391" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="e492b13f-c33d-4f20-8cfa-829093152e66" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Token ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="4c91bcc7-a47c-4472-b8b6-c54c10930647" key="textField" positionType="Float" x="151" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tokenid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="ce46d654-3f42-4436-98c6-d7470dd07333" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="eee3c834-7235-4187-86f0-90a1b54c8504" positionType="Float" mode="Opaque" x="54" y="404" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="c2a4f083-7d69-4057-9483-6d1fa4bae574" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Invoice No                     ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="6630da4a-c220-4fdc-95eb-661dd7532d5a" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{invoiceno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7d007e99-0efa-41fd-8c82-343e5fbc3f60" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="f30fb9f1-fc51-4d14-af4d-e0ebb515a597" positionType="Float" mode="Opaque" x="54" y="416" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="57286188-8129-441a-a848-4dffbe124a8f" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Processing Code           ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="c25313e6-448f-498d-8e34-2757eb2e3adf" key="textField" positionType="Float" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{processingcode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="39fd9825-c202-4fd8-ba0f-82db7f01825e" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="3065e078-8b0d-4504-b3c4-c166d4b55c10" positionType="Float" mode="Opaque" x="54" y="429" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="d040895f-cd1e-4f56-967b-47521a460ecd" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Approved Code              ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="7e09a042-845d-40a2-9ae2-994e711564ed" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{approvecode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="49c8b469-b93b-4721-9fc0-c8b4181ab5d1" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="f8c12f9d-7fc4-4bd9-b3b0-1b5a68866ce9" positionType="Float" mode="Opaque" x="54" y="442" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="defe4c3d-f17d-4b73-9521-bc39a04d074c" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[From Account]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="eea8fe9a-1abf-4d6e-89ef-5ca6038220ed" key="textField" positionType="Float" x="150" y="0" width="265" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fromAccount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="fc316c58-de6f-415a-8095-4a937b492a12" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="ef8c77ef-a9d4-4c46-aa0c-3ece9698a2ef" positionType="Float" mode="Opaque" x="51" y="455" width="418" height="12"/>
+				<staticText>
+					<reportElement uuid="ffb5c2e4-8397-4dd2-a39f-e5284e870d0c" key="staticText" positionType="Float" mode="Transparent" x="19" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[To Account]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="1136a4f0-5be2-4da6-8f53-8dcb6aa5f169" key="textField" positionType="Float" mode="Transparent" x="153" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{toAccount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="67e0f350-3e44-4035-a88a-cc2fe444c2dc" key="staticText" positionType="Float" mode="Transparent" x="138" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="1a7783e2-b5a3-4aa2-8224-d32b34349b6e" positionType="Float" mode="Opaque" x="55" y="338" width="414" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="562c8cfb-f8f0-4dd1-b2f5-4cbb271f9cb6" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Status                    ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="48d67c38-2c39-4f22-be08-7486d0fe2d9a" key="textField" positionType="Float" x="149" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="54227654-9538-41db-98bf-1727bf647624" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="836cd3fb-3143-46c0-a228-082f049583fa" positionType="Float" mode="Opaque" x="54" y="352" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="69c6405a-62c1-4afb-8540-0516eefb92b1" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Approval Status]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="833a3a70-11d4-4ad4-a2a7-4eb9628bd5a9" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{approvalstatus}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="09b24246-c8dd-4db9-b567-1618140205cd" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="649f4185-f319-43e3-9c2a-5820400391f3" positionType="Float" mode="Opaque" x="55" y="468" width="414" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="5fb0d5a5-26f6-426b-ac5b-a19ee9f3e3a2" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[POS Condition Code]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="a03f008a-3043-4296-affc-a4c64a2d44e9" key="textField" positionType="Float" x="149" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{posconcode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e877b48b-7592-41c4-adce-dde492dd0f40" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="7b1c4a31-ece3-45d3-b2c6-ffb3372a3d9f" positionType="Float" mode="Opaque" x="54" y="134" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="a6ebcbb4-136e-4a6c-a212-ea7a3dc1ff1a" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[From Card No                     ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="bf4cc970-b8a5-416b-9b7e-abffe5cb236b" key="textField" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{maskedcard}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="5632f5fa-a572-454b-a2a1-6a6c6e02b5c0" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="5d642f9b-3e2e-48ca-9d87-e96faaaeff9c" positionType="Float" mode="Transparent" x="54" y="147" width="415" height="12" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="65448d6b-0c45-4d0e-a982-723e274b6e83" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[To Card No                   ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="397a6f3a-082c-41e1-a761-7d1c2fb794a6" key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tomaskedcard}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="54b0b18f-d85b-4566-8837-5b19823855f2" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="dcea8bbb-c289-490a-94e9-b3a611e209a7" positionType="Float" mode="Opaque" x="52" y="482" width="417" height="12"/>
+				<staticText>
+					<reportElement uuid="cd1a8214-2c70-46f0-bf08-5f862a7bf0fb" key="staticText" positionType="Float" mode="Transparent" x="18" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NII]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="c5e01380-5d4c-471a-8642-04c7ae616650" key="textField" positionType="Float" mode="Transparent" x="152" y="0" width="264" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nii}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b33336e2-d672-4fe3-8876-6cba41bc3b7c" key="staticText" positionType="Float" mode="Transparent" x="137" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="a9a4a69c-9d63-4519-895a-f63ee5192cbb" positionType="Float" mode="Opaque" x="55" y="495" width="414" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="1ccc0ba0-2346-451d-b080-c3f60dbb4f64" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[MTI                                 ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="4065f1b9-37c2-4d6b-a8a5-caa3eecff89a" key="textField" positionType="Float" x="149" y="0" width="264" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mti}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="026269e0-89d4-4995-82b0-ecd8f320e7fc" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="d3fac544-6469-4b5a-bb91-f2a205a52fe8" positionType="Float" mode="Opaque" x="55" y="508" width="414" height="12"/>
+				<staticText>
+					<reportElement uuid="56bf47a7-ccb5-465f-be94-ae612bac87ad" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Local Date                       ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="54634742-9f5d-4e12-8864-46026f6e1c84" key="textField" positionType="Float" mode="Transparent" x="149" y="0" width="265" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{localdate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="12e8759b-e810-4536-aa35-ece2b601fe9e" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="f61f0f2d-9912-4461-a157-45abbeb60a8c" positionType="Float" mode="Opaque" x="55" y="521" width="414" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="d687c03a-fa4e-42c5-9d1d-7db969208ac5" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="108" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Local Time                      ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="0dfa87fe-43e6-4cfe-89fe-12a498d3e5ee" key="textField" positionType="Float" x="149" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{localtime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7029499d-3e12-4d89-a3fd-b394432ed081" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="b70afc0c-ad0c-43c3-83a8-d259e39cc368" positionType="Float" mode="Opaque" x="55" y="534" width="414" height="12"/>
+				<staticText>
+					<reportElement uuid="fbc63071-764d-483b-91f2-e3fd9a64f739" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[POS Entry Mode              ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="840dfdd4-d461-4aa0-9565-c057cc5c9ff0" key="textField" positionType="Float" mode="Transparent" x="149" y="0" width="264" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{posentrymode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="c2f3acbc-bfbb-4ac9-a268-3fd2ea58df73" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="1b58eeb1-3621-422a-9455-3054fa2c0397" positionType="Float" mode="Opaque" x="56" y="548" width="413" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="de905ad1-cec9-4995-b9f9-91d9eaf3da47" key="staticText" positionType="Float" mode="Transparent" x="14" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Card Expire Date           ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="cda86804-405a-429c-8400-85426393ef95" key="textField" positionType="Float" x="148" y="0" width="264" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cardexdate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="cde84f93-ac47-4281-8cf2-bfca370a21c9" key="staticText" positionType="Float" mode="Transparent" x="133" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="3a6b71df-0322-477e-9d93-06708ea243b9" positionType="Float" mode="Opaque" x="56" y="562" width="413" height="12"/>
+				<staticText>
+					<reportElement uuid="9471d59f-f7f4-48ed-827b-bcfca2a2765a" key="staticText" positionType="Float" mode="Transparent" x="14" y="0" width="110" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Last Updated Time          ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="f5efbe6b-4e0d-4e80-8951-08de0f041b51" key="textField" positionType="Float" mode="Transparent" x="148" y="0" width="265" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{lastupdatedtime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="547162e3-e6df-4fb6-8ae9-90a3f68ee7af" key="staticText" positionType="Float" mode="Transparent" x="133" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="13fb4cc8-9d39-4c81-aa60-91483bb53743" positionType="Float" mode="Opaque" x="55" y="576" width="414" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="ecab37db-e4b7-42c6-9399-c40159b04baa" key="staticText" positionType="Float" mode="Transparent" x="15" y="0" width="109" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Created Time                      ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="c7cd3d16-b7e4-4245-b2b8-7b7f5a208c01" key="textField" positionType="Float" x="149" y="0" width="261" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{createdtime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="dbcba85a-7fb0-4b26-a5e3-ad06128c43b9" key="staticText" positionType="Float" mode="Transparent" x="134" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement uuid="de3483d2-73c5-4abd-b99a-0de500d9638c" key="staticText-20" x="373" y="67" width="69" height="10"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Generated on  :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="9770a7f4-12ff-42df-a6c1-9bb6945483ba" key="textField" x="445" y="67" width="90" height="10"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{printeddate}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="c401ffbe-fbcb-4b10-ba12-b29b2df1bbfd" positionType="Float" mode="Opaque" x="54" y="261" width="415" height="12" backcolor="#CCCCCC"/>
+				<staticText>
+					<reportElement uuid="f071d98b-84a4-4d8e-9981-b036adae19f6" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Card Type]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="3bb145f0-d943-4fef-8ac4-44e8d867b0da" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="262" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cardType}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="d969357a-72f4-4eee-a32a-f4f2693cd57e" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="3a4e278c-b497-41a7-b46b-3c7c11a9fb53" positionType="Float" mode="Opaque" x="54" y="325" width="415" height="12"/>
+				<staticText>
+					<reportElement uuid="73ebddea-deaa-4164-b897-095776f8bd9f" key="staticText" positionType="Float" mode="Transparent" x="16" y="0" width="107" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Deduct Amount]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="965d8312-e1e6-4079-8c28-2a727129a27c" key="textField" positionType="Float" mode="Transparent" x="150" y="0" width="263" height="12" backcolor="#FFFFFF"/>
+					<box topPadding="3" leftPadding="15" bottomPadding="3"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deductAmount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="a6f6ec62-4f40-4960-9c31-2b54d343bf06" key="staticText" positionType="Float" mode="Transparent" x="135" y="0" width="15" height="12" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[ :    ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="3" splitType="Stretch"/>
+	</detail>
+	<lastPageFooter>
+		<band height="32" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="aa9df245-e55d-4480-ae8f-90191d7cbea4" key="textField" x="220" y="3" width="100" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="b8d1929f-41d5-411e-8048-ade110a0a818" key="textField-3" x="220" y="18" width="163" height="11"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bankmail}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8a86c9d2-f5d7-4309-96fe-e3baf5cc4413" key="line-2" x="0" y="29" width="534" height="1" forecolor="#FD4F00"/>
+			</line>
+			<line>
+				<reportElement uuid="8e2fcaeb-c881-4e5f-a371-837794261fe8" key="line-2" x="0" y="16" width="535" height="1" forecolor="#FD4F00"/>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="6ea1181c-3321-4760-80f1-5c86e2cf8eab" key="textField-4" x="421" y="19" width="113" height="10"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{banktel}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="45bbfcc8-8e38-47f0-aa41-01f2efe3e516" key="textField-2" x="0" y="17" width="220" height="12"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bankaddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : SmsServerConfiguration.xml
+    Created on : October 30, 2009, 3:05 PM
+    Author     : Lakitha
+    Description:
+        Purpose of the document is to keep configuration of the SMS Server in one location.
+        This copntains SMS SERVER IP address & PORT that should connect.
+-->
+		
+
+
+<smsserverconfiguration>
+    <!--Sms Server configuration details
+    test sms server<ip>10.10.20.18</ip>  test switch <ip>10.10.20.15
+    live sms server<ip>192.168.100.144</ip>  live switch <ip>192.168.100.145</ip>-->
+	<configurations>
+		<ip>192.168.100.144</ip>
+                <port>8600</port>		
+	</configurations>
+        
+        <!--Switch configuration details-->
+        <configurations>
+		<ip>192.168.100.145</ip>
+                <port>7300</port>		
+	</configurations>
+</smsserverconfiguration>

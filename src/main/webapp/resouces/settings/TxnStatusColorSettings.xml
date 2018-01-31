@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : TxnStatusColorSettings.xml
+    Created on : February 10, 2009, 12:45 PM
+    Author     : saminda
+    Description:
+        Purpose of the document follows.
+-->
+<transactionstatuscolor>
+    <statuscolor>
+        <color>#B3FF91</color>
+        <code>TXRF</code>
+        <description>Transaction Recieved From Flex</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#c8fcf8</color>
+        <code>TXRP</code>
+        <description>Transaction Reversal Pending</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#E4BDB6</color>
+        <code>TXRE</code>
+        <description>Transaction Recieved From E-Switch</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#FFFFAA</color>
+        <code>COMP</code>
+        <description>Complete</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#FF4964</color>
+        <code>TXFL</code>
+        <description>Transaction Fail</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#A5FF56</color>
+        <code>TXRS</code>
+        <description>Transaction Reversal</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#42E4E8</color>
+        <code>TXIN</code>
+        <description>Transaction Initiated</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#E8FFDE</color>
+        <code>TXSG</code>
+        <description>Transaction Send To SMS Gateway</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#EEF64E</color>
+        <code>TXRG</code>
+        <description>Transaction Recieved From SMS Gateway</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#9999FF</color>
+        <code>TXSF</code>
+        <description>Transaction Send To Flex</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#F294C8</color>
+        <code>TXSE</code>
+        <description>Transaction Send To E-Switch</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#FF9999</color>
+        <code>TXRC</code>
+        <description>Transaction Recieved From CTL</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#00FFFF</color>
+        <code>TXSC</code>
+        <description>Transaction Send To CTL</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#8849FF</color>
+        <code>TXSM</code>
+        <description>Transaction Settled</description>
+    </statuscolor>
+    <statuscolor>
+        <color>#EA00FF</color>
+        <code>TXVD</code>
+        <description>Transaction Void</description>
+    </statuscolor>
+</transactionstatuscolor>
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:xe</property>
+        <!--<property name="hibernate.connection.url">jdbc:oracle:thin:@10.10.20.10:1521:NIP</property>-->
+        <property name="hibernate.connection.username">RAWMAKYAMU</property>
+        <!--<property name="hibernate.connection.username">NTBWALLETLIVE4</property>-->
+        <!--<property name="hibernate.connection.username">NTBWALLETDEMO</property>-->
+        <property name="hibernate.connection.password">password</property>
+        <!--<property name="hibernate.connection.datasource">java:/SBANK_JNDI</property>-->
+        <!--<property name="hibernate.connection.datasource">jdbc/SBANK_JNDI</property>-->
+        
+        <!--        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="hibernate.c3p0.idle_test_period">100</property>
+        <property name="hibernate.c3p0.max_size">100</property>
+        <property name="hibernate.c3p0.max_statements">0</property>
+        <property name="hibernate.c3p0.min_size">10</property>
+        <property name="hibernate.c3p0.timeout">100</property>-->
+        <property name="hibernate.connection.autocommit">false</property>
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <!-- Enable Hibernate's automatic session context management, in this case the session will be close after each 
+        transaction! -->
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">false</property>
+        <!-- auto create tables -->
+        <!--<property name="hbm2ddl.auto">none</property>-->
+        <property name="hbm2ddl.auto">update</property> 
+
+        <mapping class="com.rawmakyamu.util.mapping.PagetaskId"/>
+        <mapping class="com.rawmakyamu.util.mapping.Systemaudit"/>
+        <mapping class="com.rawmakyamu.util.mapping.Userrole"/>
+        <mapping class="com.rawmakyamu.util.mapping.Page"/>
+        <mapping class="com.rawmakyamu.util.mapping.Systemuser"/>
+        <mapping class="com.rawmakyamu.util.mapping.Transaction"/>
+        <mapping class="com.rawmakyamu.util.mapping.Statuscategory"/>
+        <mapping class="com.rawmakyamu.util.mapping.Transactiontype"/>
+        <mapping class="com.rawmakyamu.util.mapping.Pagetask"/>
+        <mapping class="com.rawmakyamu.util.mapping.SectionpageId"/>    
+        <mapping class="com.rawmakyamu.util.mapping.Task"/>
+        <mapping class="com.rawmakyamu.util.mapping.UserrolesectionId"/>
+        <mapping class="com.rawmakyamu.util.mapping.Userpassword"/>
+        <mapping class="com.rawmakyamu.util.mapping.Passwordpolicy"/>
+        <mapping class="com.rawmakyamu.util.mapping.Section"/>
+        <mapping class="com.rawmakyamu.util.mapping.Status"/>
+        <mapping class="com.rawmakyamu.util.mapping.UserpasswordId"/>
+        <mapping class="com.rawmakyamu.util.mapping.Userrolesection"/>
+        <mapping class="com.rawmakyamu.util.mapping.Userlevel"/>        
+        <mapping class="com.rawmakyamu.util.mapping.Currency"/>
+        <mapping class="com.rawmakyamu.util.mapping.Sectionpage"/>
+        <mapping class="com.rawmakyamu.util.mapping.Loginhistory"/>
+        <mapping class="com.rawmakyamu.util.mapping.Logintype"/>
+
+
+
+        <mapping class="com.rawmakyamu.util.mapping.Promotionuserlevel"/>
+
+        <mapping class="com.rawmakyamu.util.mapping.MsPromotions"/>
+        <mapping class="com.rawmakyamu.util.mapping.MsUserParam"/>
+        <mapping class="com.rawmakyamu.util.mapping.AtmLocations"/>
+  
+     
+        <mapping class="com.rawmakyamu.util.mapping.Transactionhistory"/>
+ 
+
+        <mapping class="com.rawmakyamu.util.mapping.Termadult"/>
+        <mapping class="com.rawmakyamu.util.mapping.Termteen"/>
+
+        <mapping class="com.rawmakyamu.util.mapping.PagetaskTemplateId"/>
+        <mapping class="com.rawmakyamu.util.mapping.PagetaskTemplate"/>
+
+        <mapping class="com.rawmakyamu.util.mapping.MsUserMessage"/>
+
+        <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPush"/>
+
+        <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPushBlock"/>
+        <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPushFile"/>
+
+        
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,51 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TAXI Service</title>
+<!-- start: MAIN CSS -->
+<link href="resouces/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="resouces/css/font-awesome.min.css">
+<link rel="stylesheet" href="resouces/css/style.css">
+<link rel="stylesheet" href="resouces/css/main.css">
+<link rel="stylesheet" href="resouces/css/main-responsive.css">
+<!--<link rel="stylesheet" href="resouces/css/all.css">-->
+<link rel="stylesheet" href="resouces/css/bootstrap-colorpalette.css">
+<link rel="stylesheet" href="resouces/css/perfect-scrollbar.css">
+<!--<link rel="stylesheet/less" type="text/css" href="assets/css/styles.less">-->
+<link rel="stylesheet" href="resouces/css/theme_light.css" type="text/css" id="skin_color">
+<!--[if IE 7]>
+<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+
+<link rel="stylesheet" href="resouces/css/header/header.css">
+<!-- end: MAIN CSS -->
+
+<!-- common css-->
+<link rel="stylesheet" href="resouces/css/common/common.css">
+<link rel="stylesheet" href="resouces/quill/quill.snow.css" />
+<style type="text/css">
+    .jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+</style>
+
+<!-- start: MAIN JAVASCRIPTS -->
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.min.js"></script>
+<script src="assets/plugins/excanvas.min.js"></script>
+<![endif]-->
+<!--        <script src="resouces/js/jquery.min.js"></script>
+        <script src="resouces/js/jquery-ui-1.10.2.custom.min.js"></script>-->
+
+
+<sj:head jqueryui="true" jquerytheme="mytheme" customBasepath="resouces/themes"/>   
+<script src="resouces/js/bootstrap.min.js"></script>
+<script src="resouces/js/jquery.blockUI.js"></script>
+<script src="resouces/js/jquery.icheck.min.js"></script>
+<script src="resouces/js/jquery.mousewheel.js"></script>
+<script src="resouces/js/perfect-scrollbar.js"></script>
+<script src="resouces/js/less-1.5.0.min.js"></script>
+<script src="resouces/js/jquery.cookie.js"></script>
+<script src="resouces/js/bootstrap-colorpalette.js"></script>
+<script src="resouces/js/main.js"></script>
+<script src="resouces/js/wheelzoom.js"></script>
+<script type="text/javascript" src="resouces/quill/quill.min.js"></script>
+<script src="resouces/js/tinymce/tinymce.min.js"></script>
+<script src="resouces/js/jquery-ui-1.10.2.custom.min.js"></script>
+<!-- end: MAIN JAVASCRIPTS -->

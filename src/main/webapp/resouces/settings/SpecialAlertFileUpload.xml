@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : SpecialAlertFileUpload.xml
+    Created on : July 25, 2011, 5:12 PM
+    Author     : janaka_h
+    Description:
+        Purpose of the document follows.
+-->
+<!--
+For widows server path
+C:\\test1
+-->
+<root>
+    <filepath>
+        <path>C:\\test1</path> 
+        <!--<path>/opt/EPIC/Special_alert</path> -->
+    </filepath>
+</root>
