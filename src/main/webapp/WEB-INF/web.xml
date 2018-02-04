@@ -8,7 +8,7 @@
     </filter>
     <context-param>
         <param-name>version</param-name>
-        <param-value>V2.30</param-value>
+        <param-value>V1.00</param-value>
     </context-param>
     <context-param>
         <param-name>genpass</param-name>
