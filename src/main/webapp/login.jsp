@@ -35,6 +35,7 @@
                 z-index: 1000;
                 border-top-width: 1px;
                 text-align: center;
+                color: #e6b800;
             }
             .login-form{
                 display: block;
