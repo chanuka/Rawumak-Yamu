@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%@taglib  uri="/struts-jquery-tags" prefix="sj"%>
 <!DOCTYPE html>
 
 
@@ -13,6 +14,34 @@
     <head>
         <%@include file="/stylelinks.jspf" %>
         <title>Page Management</title>
+
+        <style>
+            #map {
+                height: 550px;
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body style="">
+        <jsp:include page="/header.jsp"/>
+        <div class="main-container">
+            <jsp:include page="/leftmenu.jsp"/>
+            <div class="main-content">
+                <div class="container" style="min-height: 760px;">
+                    <!-- start: PAGE NAVIGATION BAR -->
+                    <jsp:include page="/navbar.jsp"/>
+                    <!-- end: NAVIGATION BAR -->
+                    <div class="row">
+                        <div id="content1">
+
+                            <div id="map"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
 
             function initMap() {
@@ -93,14 +122,14 @@
                     lat: 6.874319,
                     long: 79.969628
                 };
-                
+
                 var mcnugegoda = {
                     info: '<strong>McDonalds</strong><br>\r\
                                         McDonalds<br>Nugegoda<br>',
                     lat: 6.870545,
                     long: 79.886227
                 };
-                
+
                 var bokundara = {
                     info: '<strong>Bokundara</strong><br>\r\
                                         Bokundara<br>Piliyandala<br>',
@@ -160,37 +189,5 @@
         <script async defer 
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAslstfBjdBfAkcRyX-ISvB5rT7IZI8hos&callback=initMap">
         </script>
-        <style>
-            #map {
-                height: 550px;
-                width: 100%;
-            }
-
-        </style>
-    </head>
-    <body style="">
-        <jsp:include page="/header.jsp"/>
-        <div class="main-container">
-            <jsp:include page="/leftmenu.jsp"/>
-            <div class="main-content">
-                <div class="container" style="min-height: 760px;">
-                    <!-- start: PAGE NAVIGATION BAR -->
-                    <jsp:include page="/navbar.jsp"/>
-                    <!-- end: NAVIGATION BAR -->
-                    <div class="row">
-                        <div id="content1">
-                            <s:div id="divmsg">
-                                <s:actionerror theme="jquery"/>
-                                <s:actionmessage theme="jquery"/>
-                            </s:div>
-
-                            <div id="map"></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </body>
 </html>
