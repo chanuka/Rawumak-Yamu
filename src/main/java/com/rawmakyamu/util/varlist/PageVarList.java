@@ -67,5 +67,6 @@ public class PageVarList {
     public static final String CUSTOMER_PENDING_TASK_HISTORY_PAGE = "TCPH";
     public static final String PRIVILEGE_PENDING_TASK_HISTORY_PAGE = "TPPH";
     public static final String HOW_TO_PAGE = "SCHT";
+    public static final String DRIVER_TRACKING_MGT_PAGE = "SCDT";
 
 }
