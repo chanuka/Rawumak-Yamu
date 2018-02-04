@@ -189,5 +189,10 @@
         <script async defer 
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAslstfBjdBfAkcRyX-ISvB5rT7IZI8hos&callback=initMap">
         </script>
+        <!-- end: MAIN CONTAINER -->
+        <!-- start: FOOTER -->
+        <jsp:include page="/footer.jsp"/>
+        <!-- end: FOOTER -->
+        <!-- end: BODY -->
     </body>
 </html>
