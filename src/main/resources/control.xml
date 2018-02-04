@@ -231,6 +231,13 @@
     
     <package name="systemconfig" extends="pglobal" namespace="/">
         
+        <action name="*DriverTracking" method="{1}"
+                        class="com.rawmakyamu.action.controlpanel.systemconfig.DriverTrackingMgtAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/drivertrackingmgt/drivertrackingmgt.jsp</result>
+            <result name="success"></result>
+            
+        </action>
         <action name="*TransactionType" method="{1}"
                         class="com.rawmakyamu.action.controlpanel.systemconfig.TransactionTypeAction">
             <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
