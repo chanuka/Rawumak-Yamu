@@ -8,10 +8,7 @@
 
             <div class="col-sm-8">
                 <div class="row">
-                    <div  class="col-sm-9" style="padding-right: 0px;">	
-                        <h5 style="font-family:Arial,Helvetica,sans-serif;font-size: 10pt;color: #e6b800;">Welcome,&nbsp; ${SYSTEMUSER.username} | User Role: ${SYSTEMUSER.userrole.description} | ${CURRENTDATE} |Last login date time: ${LOGGEDDATE}</h5>						
-                    </div>
-
+                    <h5 style="font-family:Arial,Helvetica,sans-serif;font-size: 10pt;color: #e6b800;">Welcome,&nbsp; ${SYSTEMUSER.username} | User Role: ${SYSTEMUSER.userrole.description} | ${CURRENTDATE} |Last login date time: ${LOGGEDDATE}</h5>						
                 </div>
             </div>
             <div class="col-sm-1">
