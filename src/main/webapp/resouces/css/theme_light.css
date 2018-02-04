@@ -164,8 +164,8 @@ ul.main-navigation-menu li > ul.sub-menu > li a {
 }
 .footer-fixed .footer {
 
-    background: #D8D4D4 !important;
-    border-top-color: #C8C7CC;
+    background: #000000 !important;
+    border-top-color: #000000;
 }
 .breadcrumb > .active{
     color: #15317E;
@@ -177,7 +177,7 @@ ul.main-navigation-menu li > ul.sub-menu > li a {
 }
 /**/
 .footer-inner {
-    color: black;
+    color: #e6b800;
 }
 
 .main-content .container {
